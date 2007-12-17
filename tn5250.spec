@@ -15,7 +15,6 @@ License: 	GPL & LGPL
 Group: 		Networking/Other
 Source: 	http://prdownloads.sourceforge.net/tn5250/%{name}-%{version}.tar.bz2
 Url: 		http://tn5250.sourceforge.net
-BuildRoot: 	%_tmppath/%name-%version-%release-root
 Requires:	ncurses, openssl
 BuildRequires:	ncurses-devel, openssl-devel
 Requires(post): desktop-file-utils
