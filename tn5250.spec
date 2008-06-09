@@ -94,9 +94,13 @@ if which tic>/dev/null 2>&1; then tic %{_datadir}/%{name}/5250.terminfo >/dev/nu
 %postun
 %{clean_desktop_database}
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 
 %preun
