@@ -10,7 +10,7 @@
 Summary: 	5250 Telnet protocol and Terminal
 Name: 		%name
 Version: 	%ver
-Release: 	%mkrel 3
+Release: 	%mkrel 5
 License: 	GPL & LGPL
 Group: 		Networking/Other
 Source: 	http://prdownloads.sourceforge.net/tn5250/%{name}-%{version}.tar.bz2
