@@ -1,5 +1,7 @@
+%define Werror_cflags %nil
+
 %define name tn5250
-%define ver 0.17.3
+%define ver 0.17.4
 
 %define major   1
 %define libname %mklibname %name %major
@@ -10,7 +12,7 @@
 Summary: 	5250 Telnet protocol and Terminal
 Name: 		%name
 Version: 	%ver
-Release: 	%mkrel 6
+Release: 	%mkrel 1
 License: 	GPL & LGPL
 Group: 		Networking/Other
 Source: 	http://prdownloads.sourceforge.net/tn5250/%{name}-%{version}.tar.bz2
@@ -62,7 +64,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 Encoding=UTF-8
 Name=%{title}
 Comment=%{summary}
-Exec=%{_bindir}/%{name} 
+Exec=%{_bindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
@@ -81,7 +83,6 @@ install *.xpm %{buildroot}%{_datadir}/icons
 mv -f linux/README README.linux
 cp -f %{name}-48x48.png %{buildroot}%{_datadir}/icons/%{name}.png
 
-%multiarch_includes %buildroot%_includedir/tn5250/config.h
 
 %clean
 [ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
@@ -115,6 +116,7 @@ fi
 %{_bindir}/*5250
 %{_bindir}/*5250d
 %{_bindir}/scs2*
+%{_bindir}/5250keys
 %{_mandir}/man[15]/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
@@ -129,14 +131,6 @@ fi
 %defattr(-,root,root)
 %{_libdir}/*a
 %{_libdir}/*so
-%{_bindir}/*-config
 %{_includedir}/tn5250.h
 %dir %{_includedir}/tn5250
 %{_includedir}/tn5250/*.h
-%dir %_datadir/aclocal
-%_datadir/aclocal/tn5250.m4
-%{_libdir}/pkgconfig/tn5250.pc
-
-%multiarch %dir %_includedir/%multiarch_platform/tn5250
-%multiarch %_includedir/%multiarch_platform/tn5250/*.h
-
