@@ -12,7 +12,7 @@
 Summary: 	5250 Telnet protocol and Terminal
 Name: 		%name
 Version: 	%ver
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 License: 	GPL & LGPL
 Group: 		Networking/Other
 Source: 	http://prdownloads.sourceforge.net/tn5250/%{name}-%{version}.tar.bz2
@@ -51,12 +51,12 @@ It provide 5250 library and 5250 terminal emulation
 perl -pi -e 's,Example\:,Example\:\\n\\,' src/tn5250.c
 
 %build
-%configure --with-x --with-ssl
+%configure2_5x --with-x --with-ssl
 %make
 
 %install
 [ -n "$RPM_BUILD_ROOT" -a "$RPM_BUILD_ROOT" != / ] && rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
