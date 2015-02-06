@@ -9,7 +9,7 @@
 Summary: 	5250 Telnet protocol and Terminal
 Name: 		tn5250
 Version: 	0.17.4
-Release: 	5
+Release: 	6
 License: 	GPL & LGPL
 Group: 		Networking/Other
 Source: 	http://prdownloads.sourceforge.net/tn5250/%{name}-%{version}.tar.bz2
