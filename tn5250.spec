@@ -15,6 +15,11 @@ Group: 		Networking/Other
 Source: 	http://prdownloads.sourceforge.net/tn5250/%{name}-%{version}.tar.bz2
 Url: 		https://tn5250.sourceforge.net
 Requires:	ncurses, openssl
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ncurses-devel, openssl-devel
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
